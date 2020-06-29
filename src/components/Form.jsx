@@ -2,7 +2,42 @@ import React from 'react';
 import styles from './Form.module.css';
 import useSelect from '../hooks/useSelect';
 const Form = () => {
-  const [category, SelectNews] = useSelect();
+  const OPTIONS = [
+    {
+      value: 'general',
+      label: 'General',
+    },
+    {
+      value: 'business',
+      label: 'Business',
+    },
+
+    {
+      value: 'entertainment',
+      label: 'Entertainment',
+    },
+
+    {
+      value: 'health',
+      label: 'Health',
+    },
+
+    {
+      value: 'science',
+      label: 'Science',
+    },
+
+    {
+      value: 'sports',
+      label: 'Sports',
+    },
+
+    {
+      value: 'technology',
+      label: 'Tecnology',
+    },
+  ];
+  const [category, SelectNews] = useSelect('general', OPTIONS);
   return (
     <>
       <div className={`${styles.buscador} row`}>
