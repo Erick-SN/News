@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Form.module.css';
 import useSelect from '../hooks/useSelect';
+import PropTypes from 'prop-types';
 const Form = ({ setCategory }) => {
   const OPTIONS = [
     {
@@ -62,5 +63,7 @@ const Form = ({ setCategory }) => {
     </>
   );
 };
-
+Form.propTypes = {
+  setCategory: PropTypes.func.isRequired,
+};
 export default Form;
