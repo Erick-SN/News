@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Form.module.css';
 import useSelect from '../hooks/useSelect';
-const Form = () => {
+const Form = ({ setCategory }) => {
   const OPTIONS = [
     {
       value: 'general',
@@ -38,11 +38,15 @@ const Form = () => {
     },
   ];
   const [category, SelectNews] = useSelect('general', OPTIONS);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setCategory(category);
+  };
   return (
     <>
       <div className={`${styles.buscador} row`}>
         <div className='col s12 m8 offset-m2'>
-          <form>
+          <form onSubmit={onSubmit}>
             <h2 className={styles.heading}>Find News</h2>
             <SelectNews />
             <div className='input-field col s12'>
